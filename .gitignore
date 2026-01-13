@@ -1,0 +1,16 @@
+# Ignore all generated data
+data/**
+
+# Keep the gold summary (small and demonstrative)
+!data/gold/
+!data/gold/summary.md
+
+# Local databases
+*.duckdb
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
