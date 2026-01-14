@@ -73,21 +73,26 @@ python src/main.py
 
  **Observação:** por padrão, a pasta data/ não é versionada no Git (exceto data/gold/summary.md).
 
-**Exemplo de resumo**
+**Resumo automático**
 
 Após a execução, consulte data/gold/summary.md para o resumo automático do período processado.
+
+## Evidências de execução
+
+**ETL executado com sucesso (terminal):**  
+![Execução do ETL](assets/run.png)
+
+**Consulta SQL no DuckDB (resultado):**  
+![Consulta SQL](assets/sql.png)
 
 **Estrutura do projeto:**
 
 inputs/     -> arquivos de configuração e controle do pipeline
-
 src/        -> extract/transform/load/summary + orquestração
-
 notebooks/  -> demonstração passo a passo
-
 state/      -> controle de estado (incremental / rastreabilidade)
-
 data/       -> saídas do pipeline (não versionado, exceto summary.md)
+assets/     -> evidências visuais (prints)
 
 **Fontes de dados:**
 
@@ -96,6 +101,8 @@ BCB/SGS: séries temporais via API bcdata.sgs
 IBGE: localidades (UF/Regiões)
 
 ANP: série histórica de preços de combustíveis (CSV)
+
+
 
 
 
