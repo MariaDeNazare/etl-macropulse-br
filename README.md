@@ -88,10 +88,15 @@ Após a execução, consulte data/gold/summary.md para o resumo automático do p
 **Estrutura do projeto:**
 
 inputs/     -> arquivos de configuração e controle do pipeline
+
 src/        -> extract/transform/load/summary + orquestração
+
 notebooks/  -> demonstração passo a passo
+
 state/      -> controle de estado (incremental / rastreabilidade)
+
 data/       -> saídas do pipeline (não versionado, exceto summary.md)
+
 assets/     -> evidências visuais (prints)
 
 **Fontes de dados:**
@@ -101,6 +106,7 @@ BCB/SGS: séries temporais via API bcdata.sgs
 IBGE: localidades (UF/Regiões)
 
 ANP: série histórica de preços de combustíveis (CSV)
+
 
 
 
