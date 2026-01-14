@@ -1,7 +1,7 @@
 # ETL MacroPulse Brasil (BCB + IBGE + ANP)
 
 Pipeline ETL end-to-end em Python com arquitetura **Bronze / Silver / Gold**, consolidando dados públicos do **BCB (SGS)**, **IBGE** e **ANP**.  
-Saídas em **Parquet** (incluindo partição no Gold) e **DuckDB**, além de um resumo automático (`summary.md`) baseado em regras (sem IA).
+Saídas em **Parquet** (incluindo partição no Gold) e **DuckDB**, além de um resumo automático (`summary.md`) baseado em regras (sem IA) para garantir reprodutibilidade.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![ETL](https://img.shields.io/badge/ETL-Bronze%2FSilver%2FGold-green)
@@ -28,15 +28,14 @@ flowchart LR
   F --> I[summary.md]
 ```
 
-## Arquitetura de dados:
+## Arquitetura de dados
 
+```text
 data/
-
   bronze/  -> dados brutos (raw)
-  
-   silver/  -> dados limpos e padronizados
-  
-   gold/    -> agregações e produtos finais (data marts + summary)
+  silver/  -> dados limpos e padronizados
+  gold/    -> agregações e produtos finais (data marts + summary)
+```
 
 ## Como rodar
 
@@ -72,9 +71,11 @@ python src/main.py
 
 - data/macropulse.duckdb
 
+ **Observação:** por padrão, a pasta data/ não é versionada no Git (exceto data/gold/summary.md).
+
 **Exemplo de resumo**
 
-Veja: data/gold/summary.md
+Após a execução, consulte data/gold/summary.md para o resumo automático do período processado.
 
 **Estrutura do projeto:**
 
@@ -95,5 +96,6 @@ BCB/SGS: séries temporais via API bcdata.sgs
 IBGE: localidades (UF/Regiões)
 
 ANP: série histórica de preços de combustíveis (CSV)
+
 
 
